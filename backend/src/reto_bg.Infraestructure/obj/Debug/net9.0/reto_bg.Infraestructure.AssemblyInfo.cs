@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("reto_bg.Infraestructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec0ef78dfbea44720e0540dba1f74d9a9f6a4386")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+587873aac7e04cdc75e554e871a8522731f1c5c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("reto_bg.Infraestructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("reto_bg.Infraestructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
