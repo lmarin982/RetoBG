@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using reto_bg.Application.Contracts;
 using reto_bg.Domain.Models;
+using reto_bg.Domain.Responses;
 using reto_bg.Domain.Types;
 using reto_bg.Infraestructure.Context;
 
@@ -68,7 +69,7 @@ public class FacturaRepository : IFacturaRepository
         }
     }
 
-    public async Task<FacturaType?> GetFacturaAsync(int id)
+    public async Task<FacturaResponsesType?> GetFacturaAsync(int id)
     {
         try
         {
@@ -76,7 +77,34 @@ public class FacturaRepository : IFacturaRepository
             FacturaModel? model = await _context.Factura.FindAsync(id);
             if (model != null)
             {
-                return new FacturaType() { Id = model.Id, Fecha = model.Fecha, IdCliente = model.IdCliente, FormaDePago = model.FormaDePago, IdUsuario = model.IdUsuario };
+                List<DetalleFacturaModel> detalleFactura = await _context.DetalleFactura.Where(x => x.IdFactura == model.Id).ToListAsync();
+
+                decimal total_a_pagar = 0;
+                detalleFactura.ForEach(item =>
+                {
+                    total_a_pagar += item.PrecioUnitario * item.PrecioTotal;
+                });
+
+                FacturaResponsesType FacturaType = new FacturaResponsesType()
+                {
+                    Id = model.Id,
+                    Fecha = model.Fecha,
+                    IdCliente = model.IdCliente,
+                    FormaDePago = model.FormaDePago,
+                    IdUsuario = model.IdUsuario,
+                    TotalAPagar = total_a_pagar,
+                    detalleFacturaTypes = detalleFactura.Select(x => new DetalleFacturaType
+                    {
+                        Cantidad = x.Cantidad,
+                        Id = x.Id,
+                        IdFactura = x.IdFactura,
+                        IdProducto = x.IdProducto,
+                        PrecioTotal = x.PrecioTotal,
+                        PrecioUnitario = x.PrecioUnitario
+                    }).ToList()
+                };
+
+                return FacturaType;
             }
             else
             {
