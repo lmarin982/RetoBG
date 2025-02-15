@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Application\\reto_bg.Application.csproj",
+      "projectUniqueName": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Application\\reto_bg.Application.csproj",
       "projectName": "reto_bg.Application",
-      "projectPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Application\\reto_bg.Application.csproj",
+      "projectPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Application\\reto_bg.Application.csproj",
       "packagesPath": "C:\\Users\\LuisMarin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Application\\obj\\",
+      "outputPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LuisMarin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -51,8 +51,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj": {
-              "projectPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj"
+            "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj": {
+              "projectPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj"
             }
           }
         }

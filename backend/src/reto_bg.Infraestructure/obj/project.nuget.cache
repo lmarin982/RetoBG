@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fad6mUDqnXs=",
+  "dgSpecHash": "elDeIhZfNaU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj",
+  "projectFilePath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LuisMarin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\LuisMarin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

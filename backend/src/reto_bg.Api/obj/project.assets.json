@@ -2918,11 +2918,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Api\\reto_bg.Api.csproj",
+      "projectUniqueName": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Api\\reto_bg.Api.csproj",
       "projectName": "reto_bg.Api",
-      "projectPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Api\\reto_bg.Api.csproj",
+      "projectPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Api\\reto_bg.Api.csproj",
       "packagesPath": "C:\\Users\\LuisMarin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Api\\obj\\",
+      "outputPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LuisMarin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2937,8 +2937,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj": {
-              "projectPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj"
+            "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Infraestructure\\reto_bg.Infraestructure.csproj"
             }
           }
         }

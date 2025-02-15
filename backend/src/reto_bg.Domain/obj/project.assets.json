@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj",
       "projectName": "reto_bg.Domain",
-      "projectPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj",
+      "projectPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Domain\\reto_bg.Domain.csproj",
       "packagesPath": "C:\\Users\\LuisMarin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LuisMarin\\Desktop\\RetoBG\\backend\\src\\reto_bg.Domain\\obj\\",
+      "outputPath": "C:\\Users\\LuisMarin\\Documents\\GitHub\\RetoBG\\backend\\src\\reto_bg.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LuisMarin\\AppData\\Roaming\\NuGet\\NuGet.Config"
