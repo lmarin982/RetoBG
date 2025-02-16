@@ -46,7 +46,7 @@ namespace reto_bg.Api.Controllers
         {
             try
             {
-                _logger.LogInformation("Inicia metodo Controller - GetFacturas");
+                _logger.LogInformation("Inicia metodo Controller - GetFacturaPorID");
                 FacturaResponsesType? res = await _contract.GetFacturaAsync(id);
                 if (res is null) return StatusCode(StatusCodes.Status404NotFound, "Sin resultados previos");
                 return StatusCode(StatusCodes.Status200OK, res);
@@ -58,7 +58,7 @@ namespace reto_bg.Api.Controllers
             }
             finally
             {
-                _logger.LogInformation("Finaliza metodo Controller - GetFacturas");
+                _logger.LogInformation("Finaliza metodo Controller - GetFacturaPorID");
             }
         }
 
@@ -67,7 +67,7 @@ namespace reto_bg.Api.Controllers
         {
             try
             {
-                _logger.LogInformation("Inicia metodo Controller - GetFacturas");
+                _logger.LogInformation("Inicia metodo Controller - GuardarFactura");
                 bool res = await _contract.AddFacturaAsync(factura);
                 if (res is false) return StatusCode(StatusCodes.Status404NotFound, "Falla al guardar los datos");
                 return StatusCode(StatusCodes.Status200OK, res);
@@ -79,7 +79,7 @@ namespace reto_bg.Api.Controllers
             }
             finally
             {
-                _logger.LogInformation("Finaliza metodo Controller - GetFacturas");
+                _logger.LogInformation("Finaliza metodo Controller - GuardarFactura");
             }
         }
 
@@ -88,7 +88,7 @@ namespace reto_bg.Api.Controllers
         {
             try
             {
-                _logger.LogInformation("Inicia metodo Controller - GetFacturas");
+                _logger.LogInformation("Inicia metodo Controller - ActualizarFactura");
                 bool res = await _contract.UpdateFacturaAsync(factura);
                 if (res is false) return StatusCode(StatusCodes.Status404NotFound, "Falla al guardar los datos");
                 return StatusCode(StatusCodes.Status200OK, res);
@@ -100,7 +100,7 @@ namespace reto_bg.Api.Controllers
             }
             finally
             {
-                _logger.LogInformation("Finaliza metodo Controller - GetFacturas");
+                _logger.LogInformation("Finaliza metodo Controller - ActualizarFactura");
             }
         }
 
@@ -109,7 +109,7 @@ namespace reto_bg.Api.Controllers
         {
             try
             {
-                _logger.LogInformation("Inicia metodo Controller - GetFacturas");
+                _logger.LogInformation("Inicia metodo Controller - DeleteFactura");
                 bool res = await _contract.DeleteFacturaAsync(id);
                 if (res is false) return StatusCode(StatusCodes.Status404NotFound, "Falla al guardar los datos");
                 return StatusCode(StatusCodes.Status200OK, res);
@@ -121,7 +121,7 @@ namespace reto_bg.Api.Controllers
             }
             finally
             {
-                _logger.LogInformation("Finaliza metodo Controller - GetFacturas");
+                _logger.LogInformation("Finaliza metodo Controller - DeleteFactura");
             }
         }
     }
