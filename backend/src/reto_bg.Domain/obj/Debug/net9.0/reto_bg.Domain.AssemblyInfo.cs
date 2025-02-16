@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("reto_bg.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca27f9bd8d07596693d6d2c4b385de608765819f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0cb1cbc288a289edeb8a21deea31aa70d6bef8af")]
 [assembly: System.Reflection.AssemblyProductAttribute("reto_bg.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("reto_bg.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

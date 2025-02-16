@@ -1,0 +1,12 @@
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\bin\Debug\net9.0\reto_bg.Domain.deps.json
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\bin\Debug\net9.0\reto_bg.Domain.dll
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\bin\Debug\net9.0\reto_bg.Domain.pdb
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.AssemblyInfoInputs.cache
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.AssemblyInfo.cs
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.sourcelink.json
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.dll
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\refint\reto_bg.Domain.dll
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\reto_bg.Domain.pdb
+C:\Users\LuisMarin\Documents\GitHub\RetoBG\backend\src\reto_bg.Domain\obj\Debug\net9.0\ref\reto_bg.Domain.dll
