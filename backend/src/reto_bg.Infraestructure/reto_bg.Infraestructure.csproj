@@ -21,8 +21,4 @@
     <ProjectReference Include="..\reto_bg.Application\reto_bg.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configs\" />
-  </ItemGroup>
-
 </Project>

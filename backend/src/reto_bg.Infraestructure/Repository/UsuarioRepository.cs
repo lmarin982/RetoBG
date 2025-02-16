@@ -39,7 +39,7 @@ public class UsuarioRepository : IUsuarioRepository
         }
         finally
         {
-            _logger.LogInformation("Usuario agregado");
+            _logger.LogInformation("Finaliza metodo repository - AddUsuarioAsync");
         }
     }
 
@@ -61,16 +61,16 @@ public class UsuarioRepository : IUsuarioRepository
         }
         finally
         {
-            _logger.LogInformation("Usuario agregado");
+            _logger.LogInformation("Finaliza metodo repository - DeleteUsuarioAsync");
         }
     }
 
-    public async Task<UsuarioType?> GetUsuarioAsync(int id)
+    public async Task<UsuarioType?> GetUsuarioAsync(string Username, string Password)
     {
         try
         {
             _logger.LogInformation("Inicia metodo repository - GetUsuarioAsync");
-            UsuarioModel? usuarioExistente = await _context.Usuario.FirstOrDefaultAsync(x => x.Id == id);
+            UsuarioModel? usuarioExistente = await _context.Usuario.FirstOrDefaultAsync(x => x.Username == Username && x.Password == Password);
             if (usuarioExistente == null) return null;
             UsuarioType usuario = new() { Id = usuarioExistente.Id, Password = usuarioExistente.Password, Rol = usuarioExistente.Rol, Username = usuarioExistente.Username };
             return usuario;
@@ -82,7 +82,7 @@ public class UsuarioRepository : IUsuarioRepository
         }
         finally
         {
-            _logger.LogInformation("Usuario agregado");
+            _logger.LogInformation("Finaliza metodo repository - GetUsuarioAsync");
         }
     }
 
@@ -102,7 +102,7 @@ public class UsuarioRepository : IUsuarioRepository
         }
         finally
         {
-            _logger.LogInformation("Usuario agregado");
+            _logger.LogInformation("Finaliza metodo repository - GetUsuariosAsync");
         }
     }
 
@@ -130,7 +130,7 @@ public class UsuarioRepository : IUsuarioRepository
         }
         finally
         {
-            _logger.LogInformation("Usuario agregado");
+            _logger.LogInformation("Finaliza metodo repository - UpdateUsuarioAsync");
         }
     }
 }
