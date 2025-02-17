@@ -69,7 +69,7 @@ public class FacturaRepository : IFacturaRepository
         }
     }
 
-    public async Task<FacturaResponsesType?> GetFacturaAsync(int id)
+    public async Task<FacturaType?> GetFacturaAsync(int id)
     {
         try
         {
@@ -85,7 +85,16 @@ public class FacturaRepository : IFacturaRepository
                     total_a_pagar += item.PrecioUnitario * item.PrecioTotal;
                 });
 
-                FacturaResponsesType FacturaType = new FacturaResponsesType()
+                FacturaType factura = new FacturaType()
+                {
+                    Fecha = model.Fecha,
+                    FormaDePago = model.FormaDePago,
+                    Id = model.Id,
+                    IdCliente = model.IdCliente,
+                    IdUsuario = model.IdUsuario
+                };
+
+                /* FacturaResponsesType factura = new FacturaResponsesType()
                 {
                     Id = model.Id,
                     Fecha = model.Fecha,
@@ -102,9 +111,9 @@ public class FacturaRepository : IFacturaRepository
                         PrecioTotal = x.PrecioTotal,
                         PrecioUnitario = x.PrecioUnitario
                     }).ToList()
-                };
+                }; */
 
-                return FacturaType;
+                return factura;
             }
             else
             {

@@ -47,7 +47,7 @@ namespace reto_bg.Api.Controllers
             try
             {
                 _logger.LogInformation("Inicia metodo Controller - GetFacturaPorID");
-                FacturaResponsesType? res = await _contract.GetFacturaAsync(id);
+                FacturaType? res = await _contract.GetFacturaAsync(id);
                 if (res is null) return StatusCode(StatusCodes.Status404NotFound, "Sin resultados previos");
                 return StatusCode(StatusCodes.Status200OK, res);
             }
