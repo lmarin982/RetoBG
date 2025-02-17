@@ -8,8 +8,10 @@
 
 # Node
 /frontend/node_modules
-/frontendnpm-debug.log
-/frontendyarn-error.log
+/frontend/npm-debug.log
+/frontend/yarn-error.log
+/frontend/package-lock.json
+/frontend/yarn.lock
 
 # IDEs and editors
 /frontend/.idea/
@@ -41,7 +43,12 @@
 /frontend/.DS_Store
 /frontend/Thumbs.db
 
+# Net Files
 /backend/src/reto_bg.Api/bin
+/backend/src/reto_bg.Api/obj
 /backend/src/reto_bg.Application/bin
+/backend/src/reto_bg.Application/obj
 /backend/src/reto_bg.Domain/bin
+/backend/src/reto_bg.Domain/obj
 /backend/src/reto_bg.Infraestructure/bin
+/backend/src/reto_bg.Infraestructure/obj
