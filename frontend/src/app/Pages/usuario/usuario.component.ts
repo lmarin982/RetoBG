@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { UsuarioModel } from '../../interfaces/usuario';
+import { api_url } from '../../Configs/ApiUrl';
 
 @Component({
   selector: 'app-usuario',
@@ -13,7 +14,6 @@ import { UsuarioModel } from '../../interfaces/usuario';
 })
 export class UsuarioComponent implements OnInit {
   public filtroUsuario: string = '';
-  private api_url: string = '';
   usuarios: UsuarioModel[] = [/* 
     {
       id: 1,
@@ -42,7 +42,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   obtenerUsuarios() {
-    fetch(`${this.api_url}`).then(res => {
+    fetch(`${api_url.usuario}`).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {
@@ -53,7 +53,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   editarUsuario(usuario: UsuarioModel) {
-    fetch(`${this.api_url}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(usuario) } }).then(res => {
+    fetch(`${api_url.usuario}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(usuario) } }).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {
@@ -65,7 +65,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   eliminarUsuario(usuario: UsuarioModel) {
-    fetch(`${this.api_url}/${usuario.id}`, { method: 'DELETE' }).then(res => {
+    fetch(`${api_url.usuario}/${usuario.id}`, { method: 'DELETE' }).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {

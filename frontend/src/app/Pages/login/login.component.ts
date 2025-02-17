@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -6,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { api_url } from '../../Configs/ApiUrl';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder) {
+  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -31,7 +33,16 @@ export class LoginComponent {
   }
 
   login() {
-    localStorage.setItem('isLoggedIn', 'true');
-    this.router.navigate(['/home']);
+
+    const loginData = this.loginForm.value
+    this.http.post(`${api_url.usuario}/auth`, loginData).subscribe(
+      (res) => {
+        localStorage.setItem('isLoggedIn', 'true');
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
 }

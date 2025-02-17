@@ -63,11 +63,13 @@ export class HomeComponent implements OnInit {
     },
   ];
   ngOnInit() {}
+
   get filteredVentas() {
     return this.ventas.filter((venta) =>
       venta.cliente.toLowerCase().includes(this.filtroCliente.toLowerCase())
     );
   }
+  
   editarVenta(venta: any) {
     console.log('Editando venta:', venta);
   }

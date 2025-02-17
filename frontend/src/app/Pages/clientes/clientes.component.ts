@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
 import { Cliente } from '../../interfaces/cliente';
+import { api_url } from '../../Configs/ApiUrl';
 
 @Component({
   selector: 'app-clientes',
@@ -12,7 +13,6 @@ import { Cliente } from '../../interfaces/cliente';
 })
 export class ClientesComponent implements OnInit {
   public filtroCliente: string = '';
-  private api_url: string = '';
 
   constructor() { }
   clientes: Cliente[] = [/* 
@@ -43,7 +43,7 @@ export class ClientesComponent implements OnInit {
   }
 
   ObtenerClientes() {
-    fetch(`${this.api_url}`).then(res => {
+    fetch(`${api_url.cliente}`).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {
@@ -54,7 +54,7 @@ export class ClientesComponent implements OnInit {
   }
 
   editarCliente(cliente: any) {
-    fetch(`${this.api_url}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(cliente) } }).then(res => {
+    fetch(`${api_url.cliente}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(cliente) } }).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {
@@ -66,7 +66,7 @@ export class ClientesComponent implements OnInit {
   }
 
   eliminarCliente(cliente: any) {
-    fetch(`${this.api_url}/${cliente.id}`, { method: 'DELETE' }).then(res => {
+    fetch(`${api_url.cliente}/${cliente.id}`, { method: 'DELETE' }).then(res => {
       if (!res.ok) throw new Error('Error en la peticion');
       return res.json();
     }).then(data => {
