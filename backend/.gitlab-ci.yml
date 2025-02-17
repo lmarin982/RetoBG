@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: false
+  LANG: es_ES.UTF-8
+
+before_script:
+  - 'echo "Starting CI for backend project"'
+
+build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  script:
+    - dotnet restore
+    - dotnet build --configuration Release
+
+test:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  script:
+    - dotnet test --configuration Release --no-build --verbosity normal
+
+deploy:
+  stage: deploy
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t my-backend-app .
+    - docker run -d -p 80:80 my-backend-app
+  only:
+    - main
