@@ -1,0 +1,58 @@
+// Variables
+$background-color: #333;
+$text-color: white;
+$padding: 1rem;
+$gap-small: 5px;
+$gap-medium: 1rem;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+// Styles
+.header {
+  background-color: $background-color;
+  color: $text-color;
+  padding: $padding;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.nav {
+  @include flex-center;
+  justify-content: center;
+  gap: $gap-medium;
+  margin-top: $gap-medium;
+
+  &__item {
+    @include flex-center;
+    gap: $gap-small;
+  }
+
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    @include flex-center;
+    gap: $gap-small;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.main {
+  padding: 2 * $padding;
+}
+
+.footer {
+  background-color: $background-color;
+  color: $text-color;
+  padding: $padding;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

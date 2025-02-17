@@ -1,0 +1,42 @@
+<header class="header">
+  <nav class="nav">
+    <div class="nav__item">
+      <a routerLink="/home" class="nav__link">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+    </div>
+    <div class="nav__item">
+      <a routerLink="/clientes" class="nav__link">
+        <mat-icon>people</mat-icon>
+        Clientes
+      </a>
+    </div>
+    <div class="nav__item">
+      <a routerLink="/facturas" class="nav__link">
+        <mat-icon>receipt</mat-icon>
+        Facturas
+      </a>
+    </div>
+    <div class="nav__item">
+      <a routerLink="/usuarios" class="nav__link">
+        <mat-icon>person</mat-icon>
+        Usuarios
+      </a>
+    </div>
+    <div class="nav__item nav__item--logout">
+      <a href="#" class="nav__link" (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+        Cerrar Sesión
+      </a>
+    </div>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </div>
+</footer>

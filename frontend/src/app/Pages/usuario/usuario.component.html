@@ -1,0 +1,32 @@
+<h2 class="header-title">Usuarios</h2>
+<input
+  type="text"
+  placeholder="Buscar por Usuario"
+  [(ngModel)]="filtroUsuario"
+  class="search-input"
+/>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Rol</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios | filter : { username: filtroUsuario }">
+      <td>{{ usuario.id }}</td>
+      <td>{{ usuario.username }}</td>
+      <td>{{ usuario.rol }}</td>
+      <td>
+        <button (click)="editarUsuario(usuario)" class="editar-btn">
+          Editar
+        </button>
+        <button (click)="eliminarUsuario(usuario)" class="eliminar-btn">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

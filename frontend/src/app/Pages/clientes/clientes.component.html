@@ -1,0 +1,36 @@
+<h2 class="header-title">Clientes</h2>
+<input
+  type="text"
+  placeholder="Buscar por cliente"
+  [(ngModel)]="filtroCliente"
+  class="search-input"
+/>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Correo</th>
+      <th>Cédula</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes | filter : { nombre: filtroCliente }">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nombre }}</td>
+      <td>{{ cliente.apellido }}</td>
+      <td>{{ cliente.correo }}</td>
+      <td>{{ cliente.cedula }}</td>
+      <td>
+        <button (click)="editarCliente(cliente)" class="editar-btn">
+          Editar
+        </button>
+        <button (click)="eliminarCliente(cliente)" class="eliminar-btn">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

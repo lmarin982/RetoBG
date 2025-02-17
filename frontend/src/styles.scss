@@ -1,0 +1,22 @@
+// Variables
+$background-color: #e0f7fa;
+$primary-color: #00838f;
+$secondary-color: #004d40;
+$text-color: #006064;
+$hover-color: #b2ebf2;
+$font-family: Arial, sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

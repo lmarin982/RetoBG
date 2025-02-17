@@ -1,0 +1,36 @@
+<h2 class="header-title">Estadisticas del ultimo año</h2>
+<app-graficaLineal [datos]="datosGrafica"></app-graficaLineal>
+<h2 class="header-title" style="margin-top: 30px">Ultimas Ventas Realizadas</h2>
+<input
+  type="text"
+  placeholder="Buscar por cliente"
+  [(ngModel)]="filtroCliente"
+  class="search-input"
+/>
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Cliente</th>
+      <th>Vendedor</th>
+      <th>Estado</th>
+      <th>Total</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let venta of ventas | filter : { cliente: filtroCliente }">
+      <td>{{ venta.fecha }}</td>
+      <td>{{ venta.cliente }}</td>
+      <td>{{ venta.vendedor }}</td>
+      <td>{{ venta.estado }}</td>
+      <td>{{ venta.total | currency }}</td>
+      <td>
+        <button (click)="editarVenta(venta)" class="editar-btn">Editar</button>
+        <button (click)="eliminarVenta(venta)" class="eliminar-btn">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

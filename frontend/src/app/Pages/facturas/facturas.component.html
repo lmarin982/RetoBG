@@ -1,0 +1,36 @@
+<h2 class="header-title">Facturas</h2>
+<input
+  type="text"
+  placeholder="Buscar por Factura"
+  [(ngModel)]="filtroFactura"
+  class="search-input"
+/>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID Cliente</th>
+      <th>ID Usuario</th>
+      <th>Fecha</th>
+      <th>Forma de Pago</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let factura of facturas | filter : { fecha: filtroFactura }">
+      <td>{{ factura.id }}</td>
+      <td>{{ factura.idCliente }}</td>
+      <td>{{ factura.idUsuario }}</td>
+      <td>{{ factura.fecha }}</td>
+      <td>{{ factura.formaDePago }}</td>
+      <td>
+        <button (click)="editarFactura(factura)" class="editar-btn">
+          Editar
+        </button>
+        <button (click)="eliminarFactura(factura)" class="eliminar-btn">
+          Elimiar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

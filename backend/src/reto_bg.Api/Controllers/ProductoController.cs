@@ -40,7 +40,7 @@ namespace reto_bg.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<object> getProductos(int id)
+        public async Task<object> getProductos()
         {
             try
             {
