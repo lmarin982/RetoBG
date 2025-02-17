@@ -39,7 +39,9 @@ export class FacturasComponent implements OnInit {
       formaDePago: null,
     },
    */];
-  ngOnInit() { }
+  ngOnInit() {
+    this.ObtenerFacturas();
+  }
 
   ObtenerFacturas() {
     fetch(`${this.api_url}`).then(res => {

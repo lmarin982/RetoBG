@@ -38,7 +38,9 @@ export class ClientesComponent implements OnInit {
       cedula: '1122334455',
     },
    */];
-  ngOnInit() { }
+  ngOnInit() {
+    this.ObtenerClientes();
+  }
 
   ObtenerClientes() {
     fetch(`${this.api_url}`).then(res => {
