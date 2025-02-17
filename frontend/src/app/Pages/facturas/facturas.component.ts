@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
+import { FacturaModel } from '../../interfaces/Factura';
 
 @Component({
   selector: 'app-facturas',
@@ -12,8 +13,10 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 })
 export class FacturasComponent implements OnInit {
   public filtroFactura: string = '';
-  constructor() {}
-  facturas = [
+  private api_url: string = '';
+
+  constructor() { }
+  facturas: FacturaModel[] = [/* 
     {
       id: 1,
       idCliente: 1,
@@ -35,14 +38,41 @@ export class FacturasComponent implements OnInit {
       fecha: '2023-03-01',
       formaDePago: null,
     },
-  ];
-  ngOnInit() {}
+   */];
+  ngOnInit() { }
+
+  ObtenerFacturas() {
+    fetch(`${this.api_url}`).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      this.facturas = data
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
+  }
 
   editarFactura(venta: any) {
-    console.log('Editando venta:', venta);
+    fetch(`${this.api_url}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(venta) } }).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      alert(data);
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
+    /* console.log('Editando venta:', venta); */
   }
 
   eliminarFactura(venta: any) {
-    console.log('Eliminando venta:', venta);
+    fetch(`${this.api_url}/${venta.id}`, { method: 'DELETE' }).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      alert(data);
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
+    /* console.log('Eliminando venta:', venta); */
   }
 }

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
+import { Cliente } from '../../interfaces/cliente';
 
 @Component({
   selector: 'app-clientes',
@@ -11,8 +12,10 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 })
 export class ClientesComponent implements OnInit {
   public filtroCliente: string = '';
-  constructor() {}
-  clientes = [
+  private api_url: string = '';
+
+  constructor() { }
+  clientes: Cliente[] = [/* 
     {
       id: 1,
       nombre: 'Juan',
@@ -34,14 +37,41 @@ export class ClientesComponent implements OnInit {
       correo: 'carlos.lopez@example.com',
       cedula: '1122334455',
     },
-  ];
-  ngOnInit() {}
+   */];
+  ngOnInit() { }
 
-  editarCliente(venta: any) {
-    console.log('Editando venta:', venta);
+  ObtenerClientes() {
+    fetch(`${this.api_url}`).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      this.clientes = data
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
   }
 
-  eliminarCliente(venta: any) {
-    console.log('Eliminando venta:', venta);
+  editarCliente(cliente: any) {
+    fetch(`${this.api_url}`, { method: 'PUT', headers: { 'Content-Type': 'application/json', body: JSON.stringify(cliente) } }).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      alert(data);
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
+    /* console.log('Editando venta:', venta); */
+  }
+
+  eliminarCliente(cliente: any) {
+    fetch(`${this.api_url}/${cliente.id}`, { method: 'DELETE' }).then(res => {
+      if (!res.ok) throw new Error('Error en la peticion');
+      return res.json();
+    }).then(data => {
+      alert(data);
+    }).catch(err => {
+      console.error('Error al obtener usuarios', err);
+    })
+    /* console.log('Eliminando venta:', venta); */
   }
 }
